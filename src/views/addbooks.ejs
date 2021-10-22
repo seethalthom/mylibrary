@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Library App</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="robots" content="all,follow">
+    <!-- Bootstrap CSS-->
+    <link rel="stylesheet" href="/vendor/bootstrap/css/bootstrap.min.css">
+    <!-- Owl Carousel -->
+    <link rel="stylesheet" href="/vendor/owl.carousel2/assets/owl.carousel.min.css">
+    <link rel="stylesheet" href="/vendor/owl.carousel2/assets/owl.theme.default.min.css">
+    <!-- Google fonts-->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Nunito:300,400&amp;display=swap">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Abril+Fatface&amp;display=swap">
+    <!-- theme stylesheet-->
+    <link rel="stylesheet" href="/css/style.default.css" id="theme-stylesheet">
+    <!-- Custom stylesheet - for your changes-->
+    <link rel="stylesheet" href="/css/custom.css">
+    <!-- Favicon-->
+    <link rel="shortcut icon" href="/images/favicon.png">
+    <!-- Tweaks for older IEs-->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+        <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script><![endif]-->
+</head>
+
+<body>
+    <!-- Header-->
+    <header class="header">
+        <!-- Top bar -->
+        <div class="py-2 bg-dark text-white">
+            <div class="container py-1">
+                <div class="row align-items-center">
+                    <div class="col-lg-4">
+                        <ul class="list-inline mb-0 text-small">
+                            <li class="list-inline-item"><a class="reset-anchor" href="#">About us</a></li>
+                            <li class="list-inline-item">|</li>
+                            <li class="list-inline-item"><a class="reset-anchor" href="#">Explore</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-lg-4 d-none d-lg-block text-center">
+                        <ul class="list-inline mb-0 small">
+                            <li class="list-inline-item"><a class="reset-anchor" href="#"><i class="fab fa-facebook-f"></i></a></li>
+                            <li class="list-inline-item"><a class="reset-anchor" href="#"><i class="fab fa-twitter"></i></a></li>
+                            <li class="list-inline-item"><a class="reset-anchor" href="#"><i class="fab fa-instagram"></i></a></li>
+                            <li class="list-inline-item"><a class="reset-anchor" href="#"><i class="fab fa-linkedin"></i></a></li>
+                            <li class="list-inline-item"><a class="reset-anchor" href="#"><i class="fab fa-youtube"></i></a></li>
+                            <li class="list-inline-item"><a class="reset-anchor" href="#"><i class="fab fa-vimeo-v"></i></a></li>
+                        </ul>
+                    </div>
+                    <div class="col-lg-4 d-none d-lg-block text-right">
+                        <div class="dropdown text-small"><a class="reset-anchor dropdown-toggle" id="destinations" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fas fa-globe-americas mr-2"></i>Languages</a>
+                            <div class="dropdown-menu" aria-labelledby="destinations"><a class="dropdown-item text-small" href="#">English</a><a class="dropdown-item text-small" href="#">Spanish</a><a class="dropdown-item text-small" href="#">French</a><a class="dropdown-item text-small" href="#">Hindi</a>
+                                <a class="dropdown-item text-small" href="#">Malayalam</a><a class="dropdown-item text-small" href="#">Arabic</a><a class="dropdown-item text-small" href="#">Urudu</a></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Navbar 1 -->
+        <nav class="navbar navbar-expand-lg navbar-light bg-white py-4">
+            <div class="container text-center">
+
+                <p class="text-small text-uppercase text-gray mb-0 ">Your next pocket book guide</p>
+                </a>
+            </div>
+        </nav>
+        <!-- Navbar 2 -->
+        <nav class="navbar navbar-expand-lg navbar-light border-gray py-2 bg-light">
+            <div class="container">
+                <button class="navbar-toggler navbar-toggler-right mx-auto border-0" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+                <div class="collapse navbar-collapse text-center" id="navbarSupportedContent">
+                    <ul class="navbar-nav mx-auto">
+
+
+                        <%for(i=0;i<adminnav.length;i++){%>
+                            <li class="nav-item px-1">
+                                <!-- Link-->
+                                <a class="nav-link active" href="<%=adminnav[i].link%>">
+                                    <%=adminnav[i].name%>
+                                </a>
+                            </li>
+
+                            <%}%>
+
+
+                    </ul>
+
+                </div>
+            </div>
+        </nav>
+    </header>
+    <!-- Destinations -->
+
+    <div class="login-page">
+        <div class="form">
+            <form method="POST" action="/admin/addBooks/add" enctype="multipart/form-data" class="register-form">
+                <label for="title">Title</label>
+                <input required type="text" name="title" placeholder="title" />
+                <label for="author">Author</label>
+                <input required type="text" name="author" placeholder="author" />
+                <label for="genre">Genre</label>
+                <input required type="text" name="genre" placeholder="gnere" />
+                <label for="picture">Add Picture</label>
+                <input required name="picture" type="file" />
+                <button type="submit">ADD BOOK</button>
+                <a href="/books/">Go to Library</a>
+            </form>
+
+        </div>
+    </div>
+
+
+
+
+    <!-- Subscribe section -->
+    <section class="py-5">
+        <div class="container py-4">
+            <div class="row align-items-center">
+                <div class="col-lg-6 position-relative py-4"><img class="subscribe-img" src="img/subscribe-img-1.jpg" alt=""><img class="subscribe-img" src="img/subscribe-img-2.jpg" alt=""></div>
+                <div class="col-lg-6">
+                    <h2>For Unlimited Access</h2>
+                    <p class="text-muted mb-5">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eos quidem facere aliquam, delectus, incidunt ipsum fugit deserunt ducimus quibusdam consequuntur quos numquam ipsa suscipit animi dolore. Est beatae inventore voluptas.</p>
+                    <form action="#">
+                        <div class="row">
+                            <div class="form-group col-lg-8">
+                                <input class="form-control" type="email" name="email" placeholder="Enter your email address">
+                            </div>
+                            <div class="form-group col-lg-4">
+                                <button class="btn btn-dark btn-block" type="submit">Go Premium</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Top categories section -->
+
+
+    <!-- Sponsors section-->
+
+    <footer class="bg-dark py-4">
+        <div class="container">
+            <div class="row py-2">
+                <div class="col-lg-4 text-center text-lg-left mb-2 mb-lg-0">
+                    <p class="small text-muted text-uppercase mb-0">&copy; copyright 2021 - all rights reserved</p>
+                </div>
+                <div class="col-lg-4 text-center mb-2 mb-lg-0">
+                    <ul class="list-inline text-white small mb-0">
+                        <li class="list-inline-item"><a class="reset-anchor" href="#"><i class="fab fa-facebook-f"></i></a></li>
+                        <li class="list-inline-item"><a class="reset-anchor" href="#"><i class="fab fa-twitter"></i></a></li>
+                        <li class="list-inline-item"><a class="reset-anchor" href="#"><i class="fab fa-instagram"></i></a></li>
+                        <li class="list-inline-item"><a class="reset-anchor" href="#"><i class="fab fa-linkedin"></i></a></li>
+                        <li class="list-inline-item"><a class="reset-anchor" href="#"><i class="fab fa-youtube"></i></a></li>
+                        <li class="list-inline-item"><a class="reset-anchor" href="#"><i class="fab fa-vimeo-v"></i></a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-4 text-center text-lg-right">
+                    <p class="small text-muted text-uppercase mb-0"> </p>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- JavaScript files-->
+    <script src="vendor/jquery/jquery.min.js"></script>
+    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="vendor/owl.carousel2/owl.carousel.min.js"></script>
+    <script src="js/front.js"></script>
+    <script>
+        // ------------------------------------------------------- //
+        //   Inject SVG Sprite - 
+        //   see more here 
+        //   https://css-tricks.com/ajaxing-svg-sprite/
+        // ------------------------------------------------------ //
+        function injectSvgSprite(path) {
+
+            var ajax = new XMLHttpRequest();
+            ajax.open("GET", path, true);
+            ajax.send();
+            ajax.onload = function(e) {
+                var div = document.createElement("div");
+                div.className = 'd-none';
+                div.innerHTML = ajax.responseText;
+                document.body.insertBefore(div, document.body.childNodes[0]);
+            }
+        }
+        // this is set to BootstrapTemple website as you cannot 
+        // inject local SVG sprite (using only 'icons/orion-svg-sprite.svg' path)
+        // while using file:// protocol
+        // pls don't forget to change to your domain :)
+        injectSvgSprite('https://bootstraptemple.com/files/icons/orion-svg-sprite.svg');
+    </script>
+    <!-- FontAwesome CSS - loading as last, so it doesn't block rendering-->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+</body>
+
+</html>
