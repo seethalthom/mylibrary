@@ -4,12 +4,12 @@ const Schema = mongoose.Schema;
 
 const SignupSchema = new Schema({
     username: String,
-    password1: String,
+    password: String,
     password2: String,
     email: String,
 
 
 });
 
-var Signupdata = mongoose.model('Signin', SignupSchema);
+var Signupdata = mongoose.model('Signup', SignupSchema);
 module.exports = Signupdata;

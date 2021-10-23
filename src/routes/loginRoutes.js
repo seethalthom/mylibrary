@@ -25,28 +25,36 @@ function signinrouter(nav5) {
         })
 
     })
-    signinRouter.post('/login', function(req, res) {
+    signinRouter.post('/add', function(req, res) {
 
-        var item = {
+        var itemm = {
             username: req.body.username,
-            password1: req.body.password1,
+            password: req.body.password,
             password2: req.body.password2,
             email: req.body.email,
 
 
         };
-
+        console.log(itemm.username);
+        console.log(itemm.password);
+        console.log(itemm.password2);
         signupdata.findOne({
-                username: item.username,
-                password1: item.password1
+                username: itemm.username,
+                password: itemm.password
             },
             (err, user) => {
+                console.log(user)
+
+                const usname = itemm.username;
+                const pas = itemm.password;
+                console.log(usname)
                 if (err) {
                     console.log(err);
-                } else if (user !== null) {
+                } else
+                if (user !== null) {
                     console.log(" user exist");
                     res.redirect('/user');
-                } else if (item.username === "admin " && item.password1 === '12345') {
+                } else if (usname == "admin" && pas == '12345admin') {
                     res.redirect('/admin');
                 } else if (user === null) {
                     console.log('user doesnt exist')
@@ -58,10 +66,6 @@ function signinrouter(nav5) {
 
 
             })
-
-
-
-
     })
 
 
